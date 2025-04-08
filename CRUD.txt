@@ -1,0 +1,20 @@
+Arquivos para criar:
+Main.ts
+ItemMagico.ts
+Personagem.ts
+Types.ts
+
+
+
+Pontos personagem não pode passar de 10
+
+valor ser apresentado nas infos
+
+Somente classes listadas e não com outras classes 
+
+Personagem apenas 1 item magico
+
+Descrição da Entidade Item Mágico, com definições e Atributos
+
+Não pode existir intens magicos em outros tipos vinculados
+
