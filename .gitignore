@@ -1,0 +1,11 @@
+
+# Ignora build
+dist/
+build/
+
+# Ignora arquivos de ambiente
+.env
+
+# Ignora configurações de IDE
+.vscode/
+*.log
