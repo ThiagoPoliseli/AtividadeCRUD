@@ -4,6 +4,7 @@
 
 
 Siga os passos abaixo para configurar e executar o sistema no seu computador.
+
 1.Caso necessário:
  
 npm install
