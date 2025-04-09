@@ -10,20 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Personagem_1 = require("./Personagem");
-const Types_1 = require("./Types"); // Ajustado para "Types"
-const ItemMagico_1 = require("./ItemMagico"); // Ajustado para "ItemMagico"
-const readline_1 = require("readline"); // Import correto no início
+const Types_1 = require("./Types"); 
+const ItemMagico_1 = require("./ItemMagico"); 
+const readline_1 = require("readline"); 
 const rl = (0, readline_1.createInterface)({
     input: process.stdin,
     output: process.stdout,
 });
 const gerenciadorPersonagem = new Personagem_1.GerenciadorPersonagem();
 const gerenciadorItemMagico = new ItemMagico_1.GerenciadorItemMagico();
-// Função para perguntar ao usuário
+
 function perguntar(pergunta) {
     return new Promise((resolve) => rl.question(pergunta, resolve));
 }
-// Função principal do menu
 function menu() {
     return __awaiter(this, void 0, void 0, function* () {
         while (true) {
@@ -46,21 +45,21 @@ function menu() {
             console.log("╚════════════════════════════════════╝");
             const opcao = yield perguntar("Escolha uma opção: ");
             switch (opcao) {
-                case "1": // Cadastrar Personagem
+                case "1": 
                     yield cadastrarPersonagem();
                     break;
-                case "2": // Cadastrar Item Mágico
+                case "2":
                     yield cadastrarItemMagico();
                     break;
-                case "3": // Listar Personagens
+                case "3": 
                     console.log("Personagens:", gerenciadorPersonagem.listarPersonagens());
                     break;
-                case "4": // Buscar Personagem por ID
+                case "4":
                     const idPersonagem = yield perguntar("Digite o ID do personagem: ");
                     const personagem = gerenciadorPersonagem.buscarPersonagemPorId(idPersonagem);
                     console.log("Personagem:", personagem || "Não encontrado");
                     break;
-                case "5": // Atualizar Nome Aventureiro
+                case "5": 
                     const idAtualizar = yield perguntar("Digite o ID do personagem: ");
                     const novoNome = yield perguntar("Digite o novo nome aventureiro: ");
                     try {
@@ -71,7 +70,7 @@ function menu() {
                         console.error("Erro:", e.message);
                     }
                     break;
-                case "6": // Remover Personagem
+                case "6": 
                     const idRemover = yield perguntar("Digite o ID do personagem a remover: ");
                     try {
                         gerenciadorPersonagem.removerPersonagem(idRemover);
@@ -81,15 +80,15 @@ function menu() {
                         console.error("Erro:", e.message);
                     }
                     break;
-                case "7": // Listar Itens Mágicos
+                case "7": 
                     console.log("Itens Mágicos:", gerenciadorItemMagico.listarItensMagicos());
                     break;
-                case "8": // Buscar Item Mágico por ID
+                case "8":
                     const idItem = yield perguntar("Digite o ID do item mágico: ");
                     const item = gerenciadorItemMagico.buscarItemMagicoPorId(idItem);
                     console.log("Item:", item || "Não encontrado");
                     break;
-                case "9": // Adicionar Item Mágico ao Personagem
+                case "9": 
                     const idPersAdd = yield perguntar("Digite o ID do personagem: ");
                     const idItemAdd = yield perguntar("Digite o ID do item mágico: ");
                     const itemAdd = gerenciadorItemMagico.buscarItemMagicoPorId(idItemAdd);
@@ -106,11 +105,11 @@ function menu() {
                         console.log("Item não encontrado.");
                     }
                     break;
-                case "10": // Listar Itens Mágicos do Personagem
+                case "10": 
                     const idPersItens = yield perguntar("Digite o ID do personagem: ");
                     console.log("Itens:", gerenciadorPersonagem.listarItensMagicosPorPersonagem(idPersItens));
                     break;
-                case "11": // Remover Item Mágico do Personagem
+                case "11": 
                     const idPersRem = yield perguntar("Digite o ID do personagem: ");
                     const idItemRem = yield perguntar("Digite o ID do item a remover: ");
                     try {
@@ -121,12 +120,12 @@ function menu() {
                         console.error("Erro:", e.message);
                     }
                     break;
-                case "12": // Buscar Amuleto do Personagem
+                case "12": 
                     const idPersAmuleto = yield perguntar("Digite o ID do personagem: ");
                     const amuleto = gerenciadorPersonagem.buscarAmuletoDoPersonagem(idPersAmuleto);
                     console.log("Amuleto:", amuleto || "Nenhum amuleto encontrado");
                     break;
-                case "0": // Sair
+                case "0": 
                     console.log("Saindo...");
                     rl.close();
                     return;
@@ -136,7 +135,7 @@ function menu() {
         }
     });
 }
-// Função para cadastrar personagem
+
 function cadastrarPersonagem() {
     return __awaiter(this, void 0, void 0, function* () {
         const id = yield perguntar("Digite o ID do personagem: ");
@@ -160,7 +159,7 @@ function cadastrarPersonagem() {
         }
     });
 }
-// Função para cadastrar item mágico
+
 function cadastrarItemMagico() {
     return __awaiter(this, void 0, void 0, function* () {
         const id = yield perguntar("Digite o ID do item: ");
@@ -175,7 +174,7 @@ function cadastrarItemMagico() {
         }
         const forca = parseInt(forcaStr, 10);
         const defesa = parseInt(defesaStr, 10);
-        // Validação para NaN
+        
         if (isNaN(forca) || isNaN(defesa)) {
             console.log("Força e Defesa devem ser números válidos entre 0 e 10!");
             return;
@@ -189,5 +188,4 @@ function cadastrarItemMagico() {
         }
     });
 }
-// Iniciar o menu
 menu();
