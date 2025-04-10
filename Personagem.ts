@@ -20,7 +20,7 @@ export class PersonagemImpl implements Personagem {
         defesaBase: number
     ) {
     if (forcaBase + defesaBase !== 10 || forcaBase < 0 || defesaBase < 0) {
-        throw new Error("A soma de Força e Defesa deve ser exatamente 10.");
+        throw new Error("A soma de Força e Defesa deve ser exatamente 10.(5-5,6-4)");
     }
         this.id = id;
         this.nome = nome;
