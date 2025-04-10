@@ -17,10 +17,10 @@ constructor(id: string, nome: string, tipo: TipoItem, forca: number, defesa: num
     throw new Error("Item não pode ter Força e Defesa iguais a 0.");
     }
     if (tipo === TipoItem.Arma && defesa !== 0) {
-    throw new Error("Arma deve ter Defesa igual a 0.");
+    throw new Error("Arma deve ter sempre Defesa igual a 0.");
     }
     if (tipo === TipoItem.Armadura && forca !== 0) {
-    throw new Error("Armadura deve ter Força igual a 0.");
+    throw new Error("Armadura deve ter sempre Força igual a 0.");
     }
     this.id = id;
     this.nome = nome;
