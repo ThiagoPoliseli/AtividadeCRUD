@@ -1,7 +1,7 @@
 # AtividadeCRUD  
 ### Sistema de Gerenciamento para Jogos de RPG  
 
-Bem-vindo ao **AtividadeCRUD**, um sistema desenvolvido para gerenciar personagens e itens mágicos em um jogo de RPG (Role-Playing Game). Este projeto permite criar, visualizar, atualizar e excluir personagens, além de associar itens mágicos a eles.
+Bem-vindo ao **CRUD**, de um sistema desenvolvido para gerenciar personagens e itens mágicos em um jogo de RPG (Role-Playing Game). Este projeto permite criar, visualizar, atualizar e excluir personagens, além de associar itens mágicos a eles.
 
 ---
 
@@ -31,7 +31,7 @@ Antes de executar o projeto, certifique-se de ter:
 ## 🚀 Como Configurar e Executar  
 Siga os passos abaixo para rodar o sistema localmente:  
 
-1. **Instalar Dependências**: Caso seja necessário instalar pacotes (Node modules), execute `npm install` no terminal, na pasta do projeto.  
+1. **Instalar Dependências**: Instalar pacote (Node modules), execute `npm install` no terminal, na pasta do projeto.  
 2. **Compilar o Código TypeScript**: Converta os arquivos `.ts` para `.js` executando `npx tsc` no terminal.  
 3. **Executar o Programa**: Inicie o sistema com `node main.js` no terminal.  
 
